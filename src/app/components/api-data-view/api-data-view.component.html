@@ -1,0 +1,42 @@
+<p-table [value]="filteredHolidays" class="p-1" [rows]="10" [rowsPerPageOptions]="[10,25,50]" [paginator]="true">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>
+        <h1>Scotland</h1>
+      </th>
+      <th>
+        <h3>Filter Holidays From</h3>
+        <p-calendar [(ngModel)]="from" placeholder="From"></p-calendar>
+      </th>
+      <th>
+        <h3>To the date</h3>
+        <p-calendar [(ngModel)]="to" placeholder="To"></p-calendar>
+      </th>
+      <th>
+        <p-button label="Filter" (click)="filter()"></p-button>
+      </th>
+    </tr>
+    <tr>
+      <th>Title</th>
+      <th>Date</th>
+      <th>Notes</th>
+      <th>Bunting</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-holiday>
+    <tr>
+      <td>
+        {{holiday.title}}
+      </td>
+      <td>
+        {{holiday.date}}
+      </td>
+      <td>
+        {{holiday.notes}}
+      </td>
+      <td>
+        {{holiday.bunting}}
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
